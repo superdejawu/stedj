@@ -1,0 +1,34 @@
+<div id="sidebar-nav-fixed">
+  <div id="title">STEDJ</div>
+  <div id="subtitle">Fashion Forward</div>
+  <p>
+  <%= link_to 'New Post', new_post_path %>
+  <p>
+  <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </div>
+  </form>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <% @posts.each do |post| %>
+            <span class="box">
+            
+                <%= link_to image_tag(post.image.url(:medium)), post %>
+
+                
+            </span>
+        <% end %>
+        
+    </div>
+</div>
+<br>
+
+
