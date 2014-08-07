@@ -8,7 +8,7 @@ $ ->
 				containerWidth/3
 			
 	$('.box').on "mouseover", ->
-		$(this).fadeTo(100,0.8)
+		$(this).fadeTo(200,0.8)
 
 	$('.box').on "mouseout", ->
 		$(this).fadeTo(100,1)
