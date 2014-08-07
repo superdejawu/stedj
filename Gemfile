@@ -33,6 +33,10 @@ gem "devise", "~> 3.2.4"
 
 gem "paperclip", '~> 4.2'
 
+gem "jquery-turbolinks"
+
+gem "masonry-rails", "~> 0.2.1"
+
 group :development, :test do
 	#what placing it in a group does is that it says you only needa use sqlite gem in development not in production, 
 	gem 'sqlite3'
