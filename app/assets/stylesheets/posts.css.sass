@@ -15,10 +15,9 @@
 body 
 	font-family: "Raleway"
 	display:table
-	margin: 0
+	margin: 0px
 
 #header
-	float: right	
 	position: fixed
 	z-index: 1000
 	text-align: right
@@ -26,24 +25,26 @@ body
 	color: white
 
 
-#sidebar 
-	float: left
-	width: 250px
-	// height: 100%
-	// display: table-cell
-	position: fixed
-	margin: 25px
+// #sidebar 
+// 	display: inline-block
+// 	width: 250px
+// 	// height: 100%
+// 	// display: table-cell
+// 	position: fixed
+// 	margin: 25px
 
+form
+	width: auto
 
-.gallery
-	// display: table-cell
-	margin-left: 250px
-	// background-color: green
-	position: relative
+// .gallery
+// 	// display: table-cell
+// 	margin-left: 250px
+// 	// background-color: green
+// 	position: relative
 
 .box
 	width: 33.2%
-	float: left
+	display: inline-block
 	opacity: 1
 
 
@@ -53,20 +54,20 @@ body
 	// padding: 1px
 
 
-.box .heart
+.box > .heart
 	position: absolute
 	z-index: 2000
 	top: 10px 
-	left: 75% 
-	top: 10%
+	text-align: right
+	margin-right: 20px
 	visibility: hidden
 	opacity: 0
-	transition: visibility 0s linear 0.05s,opacity 0.05s linear 
+	transition: visibility 0s 
 
 .box:hover
 	img
 		opacity: 0.9
-		transition: visibility 0s linear 0.1s,opacity 0.1s linear 
+		transition: visibility 0s 
 	.heart
 		visibility: visible
 		opacity: 1
@@ -75,12 +76,10 @@ body
 	.heart:hover
 		color: red
 
-form 
-	width: 500px
-	margin: 20px auto
+
 
 .search 
-	padding: 8px 15px
+	padding: 0px 15px
 	background: rgba(50, 50, 50, 0.2)
 	border: 0px solid #dbdbdb
 	border-radius: 6px
@@ -100,11 +99,11 @@ form
 
 
 .transitions-enabled.masonry, .transitions-enabled.masonry .masonry-brick 
-	-webkit-transition-duration: 0.5s
-	-moz-transition-duration: 0.5s
-	-ms-transition-duration: 0.5s
-	-o-transition-duration: 0.5s
-	transition-duration: 0.5s
+	-webkit-transition-duration: 0.1s
+	-moz-transition-duration: 0.1s
+	-ms-transition-duration: 0.1s
+	-o-transition-duration: 0.1s
+	transition-duration: 0.1s
 
 
 .transitions-enabled.masonry 

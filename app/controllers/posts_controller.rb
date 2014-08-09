@@ -4,7 +4,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').page(params[:page]).per_page(10)
+
+    # Allow Index to respond to user in both html and js
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   # GET /posts/1

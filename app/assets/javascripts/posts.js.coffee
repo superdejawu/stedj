@@ -4,12 +4,23 @@
 
 $ ->
 	$('#posts').imagesLoaded ->
-		$('#posts').masonry 
+		$('#posts').masonry
 			columnWidth: (containerWidth) ->
 				containerWidth/3
 			
- 			 	
-			
+
+	
+	$("#menu-toggle").click (e) ->
+		e.preventDefault()
+		$("#wrapper").toggleClass "toggled"
+		setTimeout (->
+		  $("#posts").masonry()
+		), 300
+
+	  
+
+
+
 	# $('.box').on "mouseover", ->
 	# 	$(this).fadeTo(200,0.8)
 	# 	$this.nearest('.heart').

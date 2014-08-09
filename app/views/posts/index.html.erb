@@ -1,59 +1,57 @@
-<div id="header">
-    <%= link_to 'New Post', new_post_path %>
+<div id="wrapper">
+
+  <div id="header">
+	 <%= link_to 'New Post', new_post_path %>
+	 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+	</div>
+
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<%= render 'test' %>
+			<li id="title">STEDJ</li>
+			<li id="subtitle">Prototype</li>
+			<li>
+				<form role="search">
+					<input type="text" class="search" placeholder="Search" name="srch-term" id="srch-term">
+			  <!--  <span class="input-group-btn button">
+					 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+					</span> -->
+				</input>
+			</form>
+		</li>
+		<li>
+			<h5>Tags</h5>
+		</li>
+		<li>
+			Men
+		</li>
+		<li>
+			Women
+		</li>
+	</ul>
 </div>
 
-<div id="sidebar">
-  <div id="title">STEDJ</div>
-  <div id="subtitle">Fashion Forward</div>
-  <p>
-  <form role="search">
-        <div>
-            <input type="text" class="search" placeholder="Search" name="srch-term" id="srch-term">
-           <!--  <span class="input-group-btn button">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </span> -->
-        </div>
-  </form>
-  <h5>Tags</h5>
 
-  <p>
-  Men
-  <p>
-  Women
-  <p>
-  Blue Shirt
-  <p>
-  Long Shirt
-  <p>
-  Striped Dress
-  <p>
-  Uniform
-  <p>
-  Plaid Shirt
-  <p>
-  Red Purse
-  <p>
-  Summer Fashion
-  <p>
-  White Dress
+
+<div id="masonry-container page-content-wrapper" class="clearfix gallery"> 
+	<div class="container-fluid">
+		<div class="row">
+			<div id="posts" class="transitions-enabled">
+				<% @posts.each do |post| %>
+				<div class="box">
+
+					<%= link_to image_tag(post.image.url(:medium)), post %>
+					<span class ="heart glyphicon glyphicon-heart" style="font-size: 250%; opacity: 0.5; color: white;"></span>
+				</div>
+				<% end %>
+			</div>
+						<%= will_paginate @posts, :style => 'color:blue' %>
+
+		</div>
+	</div>
 </div>
-  
 
-
-<div id="masonry-container" class="clearfix gallery"> 
-    <div class="row">
-      <div id="posts" class="transitions-enabled">
-        <% @posts.each do |post| %>
-            <div class="box">
-            
-                <%= link_to image_tag(post.image.url(:medium)), post %>
-                <span class ="heart glyphicon glyphicon-heart" style="font-size: 200%; opacity: 0.5; color: white;"></span>
-            </div>
-        <% end %>
-      </div>
-
-    </div>
 </div>
-<br>
+
 
 
