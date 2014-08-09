@@ -17,12 +17,22 @@ body
 	display:table
 	margin: 0
 
+#header
+	float: right	
+	position: fixed
+	z-index: 1000
+	text-align: right
+	padding: 20px
+	color: white
+
+
 #sidebar 
 	float: left
 	width: 200px
+	height: 100%
 	// display: table-cell
-	position: absolute
-	margin: 20px
+	position: fixed
+	margin: 25px
 
 
 .gallery
@@ -34,9 +44,91 @@ body
 .box
 	width: 33.2%
 	float: left
+	opacity: 1
 
 
 .box img 
 	width: 100.5%
 	display: block
 	// padding: 1px
+
+
+.box .heart
+	position: absolute
+	z-index: 2000
+	top: 10px 
+	left: 75% 
+	top: 10%
+	width: 100% 
+	visibility: hidden
+	opacity: 0
+	transition: visibility 0s linear 0.05s,opacity 0.05s linear 
+
+.box:hover
+	img
+		opacity: 0.9
+		transition: visibility 0s linear 0.2s,opacity 0.2s linear 
+	.heart
+		visibility: visible
+		opacity: 1
+		transition-delay: 0
+
+	.heart:hover
+		color: red
+
+form 
+	width: 500px
+	margin: 20px auto
+
+.search 
+	padding: 8px 15px
+	background: rgba(50, 50, 50, 0.2)
+	border: 0px solid #dbdbdb
+	border-radius: 6px
+	width: 180px
+
+.button 
+	position: relative
+	padding: 6px 15px
+	left: -8px
+	border: 2px solid #207cca
+	background-color: #207cca
+	color: #fafafa
+
+.button:hover  
+	background-color: #fafafa
+	color: #207cca
+
+
+.transitions-enabled.masonry, .transitions-enabled.masonry .masonry-brick 
+	-webkit-transition-duration: 0.5s
+	-moz-transition-duration: 0.5s
+	-ms-transition-duration: 0.5s
+	-o-transition-duration: 0.5s
+	transition-duration: 0.5s
+
+
+.transitions-enabled.masonry 
+	-webkit-transition-property: height, width
+	-moz-transition-property: height, width
+	-ms-transition-property: height, width
+	-o-transition-property: height, width
+	transition-property: height, width
+
+
+.transitions-enabled.masonry  .masonry-brick 
+	-webkit-transition-property: left, right, top
+	-moz-transition-property: left, right, top
+	-ms-transition-property: left, right, top
+	-o-transition-property: left, right, top
+	transition-property: left, right, top
+
+
+
+/* disable transitions on container */
+.transitions-enabled.infinite-scroll.masonry 
+	-webkit-transition-property: none
+	-moz-transition-property: none
+	-ms-transition-property: none
+	-o-transition-property: none
+	transition-property: none
